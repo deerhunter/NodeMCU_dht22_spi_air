@@ -70,7 +70,7 @@ DHT dht;
 // Your WiFi credentials.
 // Set password to "" for open networks.
 char ssid[] = "miss_diavolica";
-char pass[] = "byntuhfk";
+char pass[] = "";
 
 
 void setup()
