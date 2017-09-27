@@ -268,24 +268,69 @@ client.disconnect();
 // SCREEN OUTPUT
 // 176*220 screen vertical
 void testText() {
-  tft.setCursor(35, 15);
+  
+  DrawInterface();
+  
+// Humidity
+  if (h<40){
+  tft.setTextColor(BLUE,BLACK);
+ } else {
+   if (h>80){
+     tft.setTextColor(RED,BLACK);
+ } else {
+     tft.setTextColor(GREEN,BLACK);
+ }
+ }   
+  tft.setCursor(50, 20);
+  tft.print(hum);
+  tft.println("   ");
+
+// Temperature  
+  if (t<18){
+  tft.setTextColor(BLUE,BLACK);
+ } else {
+   if (t>28){
+     tft.setTextColor(RED,BLACK);
+ } else {
+     tft.setTextColor(GREEN,BLACK);
+ }
+ }   
+  tft.setCursor(50, 60);
+  tft.print(temp);
+  tft.println("   ");
+  
+// AIR CO2 PPI  
+  
+  if (ppm>1000){
+  tft.setTextColor(RED,BLACK);
+ } else {
+   if (ppm>700){
+     tft.setTextColor(YELLOW,BLACK);
+ } else {
+     tft.setTextColor(GREEN,BLACK);
+ }
+ }
+  tft.setCursor(50, 100);
+  tft.print(co2);
+  tft.println("   ");
+}
+
+void DrawInterface(){
+  drawRect(0, 0, 176, 220, RED);
+  fillRect(1, 1, 174, 218, BLACK);
+  
+  tft.setCursor(5, 20);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(2);
   tft.print("Humid");
-  tft.println(hum);
-  tft.setCursor(20, 35);
-  tft.setTextColor(RED,BLACK);    
-  tft.setTextSize(3);
-  tft.setCursor(40, 60);
+  
+  tft.setCursor(5, 60);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(2);
   tft.print("Temp");
-  tft.println(temp);
-  tft.setCursor(60, 80);
+  
+  tft.setCursor(5, 100);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(2);
   tft.print("Air");
-  tft.println(co2);
 }
-
-
