@@ -69,8 +69,8 @@ DHT dht;
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "miss_diavolica";
-char pass[] = "";
+char ssid[] = ""; //SSID
+char pass[] = ""; //PASSWORD
 
 
 void setup()
@@ -266,7 +266,7 @@ client.disconnect();
 
 
 // SCREEN OUTPUT
-
+// 176*220 screen vertical
 void testText() {
   tft.setCursor(35, 15);
   tft.setTextColor(RED,BLACK);    
@@ -276,21 +276,16 @@ void testText() {
   tft.setCursor(20, 35);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(3);
-//  tft.println(ppi);
-  // tft.println();
   tft.setCursor(40, 60);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(2);
   tft.print("Temp");
   tft.println(temp);
- tft.setCursor(60, 80);
+  tft.setCursor(60, 80);
   tft.setTextColor(RED,BLACK);    
   tft.setTextSize(2);
   tft.print("Air");
   tft.println(co2);
- // tft.fillScreen(WHITE); 
-//  tft.println(t1);
-
 }
 
 
